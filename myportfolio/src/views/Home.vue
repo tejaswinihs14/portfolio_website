@@ -5,8 +5,9 @@
       <div class="max-width">
         <div class="home-content">
           <div class="text-1">Hello, my name is</div>
-          <div class="text-2">Tejaswini Helagalli Shivabasappa</div>
-          <div class="text-3">And I'm a <span class="typing"></span></div>
+          <div class="text-2">Tejaswini</div>
+          <div class="text-4">Helagalli Shivabasappa</div>
+          <div class="text-3">And I'm a <span v-bind="typing"></span></div>
           <a href="#">Hire me</a>
         </div>
       </div>
@@ -22,14 +23,15 @@ export default {
   components: {
     Navbar,
   },
-  methods:{
-      let typed = new Typed(".typing", {
-        strings: ["YouTuber", "Developer", "Blogger", "Designer", "Freelancer"],
-        typeSpeed: 100,
-        backSpeed: 60,
-        loop: true
-    });
-  }
+  methods: {
+    // typed: new Typed(".typing", {
+    typing: {
+      strings: ["YouTuber", "Developer", "Blogger", "Designer", "Freelancer"],
+      typeSpeed: 100,
+      backSpeed: 60,
+      loop: true,
+    },
+  },
 };
 </script>
 
@@ -66,7 +68,7 @@ section .title::after {
 
 .home {
   display: flex;
-  /* background: url("images/banner.jpg") no-repeat center; */
+  /* background-image: url("banner.jpg") no-repeat center; */
   height: 100vh;
   color: #fff;
   min-height: 500px;
@@ -107,6 +109,11 @@ section .title::after {
         margin-left: -3px;
       }
 
+      .text-4 {
+        font-size: 50px;
+        font-weight: 600;
+        margin-left: -3px;
+      }
       .text-3 {
         font-size: 40px;
         margin: 5px 0;
